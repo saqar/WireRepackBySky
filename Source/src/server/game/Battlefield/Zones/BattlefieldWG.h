@@ -154,7 +154,8 @@ enum WintergraspQuests
 {
     QUEST_VICTORY_WINTERGRASP_A   = 13181,
     QUEST_VICTORY_WINTERGRASP_H   = 13183,
-    QUEST_CREDIT_TOWERS_DESTROYED = 35074
+    QUEST_CREDIT_TOWERS_DESTROYED = 35074,
+    QUEST_CREDIT_DEFEND_SIEGE     = 31284
 };
 
 /*#########################
@@ -343,7 +344,7 @@ class TC_GAME_API BattlefieldWG : public Battlefield
          * \brief Called when a wall/tower is broken
          * - Update quest
          */
-        void BrokenWallOrTower(TeamId team);
+        void BrokenWallOrTower(TeamId team, BfWGGameObjectBuilding* building);
 
         /**
          * \brief Called when a tower is damaged
@@ -388,6 +389,7 @@ class TC_GAME_API BattlefieldWG : public Battlefield
 
         void HandleKill(Player* killer, Unit* victim) override;
         void OnUnitDeath(Unit* unit) override;
+        void HandlePromotion(Player* killer, Unit* killed);
         void PromotePlayer(Player* killer);
 
         void UpdateTenacity();
@@ -410,8 +412,6 @@ class TC_GAME_API BattlefieldWG : public Battlefield
 
         GuidUnorderedSet m_vehicles[BG_TEAMS_COUNT];
         GuidVector CanonList;
-        GuidVector KeepCreature[BG_TEAMS_COUNT];
-        GuidVector OutsideCreature[BG_TEAMS_COUNT];
 
         uint32 m_tenacityStack;
         uint32 m_saveTimer;
