@@ -6,8 +6,6 @@
 --
 -- Database: `auth`
 --
-CREATE DATABASE IF NOT EXISTS `auth` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `auth`;
 
 -- --------------------------------------------------------
 
@@ -15,7 +13,6 @@ USE `auth`;
 -- Table structure for table `account`
 --
 
-DROP TABLE IF EXISTS `account`;
 CREATE TABLE IF NOT EXISTS `account` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identifier',
   `username` varchar(32) NOT NULL DEFAULT '',
@@ -58,7 +55,6 @@ INSERT INTO `account` (`id`, `username`, `sha_pass_hash`, `sessionkey`, `v`, `s`
 -- Table structure for table `account_access`
 --
 
-DROP TABLE IF EXISTS `account_access`;
 CREATE TABLE IF NOT EXISTS `account_access` (
   `id` int(10) unsigned NOT NULL,
   `gmlevel` tinyint(3) unsigned NOT NULL,
@@ -79,7 +75,6 @@ INSERT INTO `account_access` (`id`, `gmlevel`, `RealmID`) VALUES
 -- Table structure for table `account_banned`
 --
 
-DROP TABLE IF EXISTS `account_banned`;
 CREATE TABLE IF NOT EXISTS `account_banned` (
   `id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Account id',
   `bandate` int(10) unsigned NOT NULL DEFAULT '0',
@@ -96,7 +91,6 @@ CREATE TABLE IF NOT EXISTS `account_banned` (
 -- Table structure for table `account_muted`
 --
 
-DROP TABLE IF EXISTS `account_muted`;
 CREATE TABLE IF NOT EXISTS `account_muted` (
   `guid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Global Unique Identifier',
   `mutedate` int(10) unsigned NOT NULL DEFAULT '0',
@@ -112,7 +106,6 @@ CREATE TABLE IF NOT EXISTS `account_muted` (
 -- Table structure for table `autobroadcast`
 --
 
-DROP TABLE IF EXISTS `autobroadcast`;
 CREATE TABLE IF NOT EXISTS `autobroadcast` (
   `realmid` int(11) NOT NULL DEFAULT '-1',
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
@@ -127,7 +120,6 @@ CREATE TABLE IF NOT EXISTS `autobroadcast` (
 -- Table structure for table `ip2nation`
 --
 
-DROP TABLE IF EXISTS `ip2nation`;
 CREATE TABLE IF NOT EXISTS `ip2nation` (
   `ip` int(11) unsigned NOT NULL DEFAULT '0',
   `country` char(2) NOT NULL DEFAULT '',
@@ -140,7 +132,6 @@ CREATE TABLE IF NOT EXISTS `ip2nation` (
 -- Table structure for table `ip2nationcountries`
 --
 
-DROP TABLE IF EXISTS `ip2nationcountries`;
 CREATE TABLE IF NOT EXISTS `ip2nationcountries` (
   `code` varchar(4) NOT NULL DEFAULT '',
   `iso_code_2` varchar(2) NOT NULL DEFAULT '',
@@ -159,7 +150,6 @@ CREATE TABLE IF NOT EXISTS `ip2nationcountries` (
 -- Table structure for table `ip_banned`
 --
 
-DROP TABLE IF EXISTS `ip_banned`;
 CREATE TABLE IF NOT EXISTS `ip_banned` (
   `ip` varchar(15) NOT NULL DEFAULT '127.0.0.1',
   `bandate` int(10) unsigned NOT NULL,
@@ -175,7 +165,6 @@ CREATE TABLE IF NOT EXISTS `ip_banned` (
 -- Table structure for table `logs`
 --
 
-DROP TABLE IF EXISTS `logs`;
 CREATE TABLE IF NOT EXISTS `logs` (
   `time` int(10) unsigned NOT NULL,
   `realm` int(10) unsigned NOT NULL,
@@ -190,7 +179,6 @@ CREATE TABLE IF NOT EXISTS `logs` (
 -- Table structure for table `logs_ip_actions`
 --
 
-DROP TABLE IF EXISTS `logs_ip_actions`;
 CREATE TABLE IF NOT EXISTS `logs_ip_actions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Unique Identifier',
   `account_id` int(10) unsigned NOT NULL COMMENT 'Account ID',
@@ -210,7 +198,6 @@ CREATE TABLE IF NOT EXISTS `logs_ip_actions` (
 -- Table structure for table `rbac_account_permissions`
 --
 
-DROP TABLE IF EXISTS `rbac_account_permissions`;
 CREATE TABLE IF NOT EXISTS `rbac_account_permissions` (
   `accountId` int(10) unsigned NOT NULL COMMENT 'Account id',
   `permissionId` int(10) unsigned NOT NULL COMMENT 'Permission id',
@@ -226,7 +213,6 @@ CREATE TABLE IF NOT EXISTS `rbac_account_permissions` (
 -- Table structure for table `rbac_default_permissions`
 --
 
-DROP TABLE IF EXISTS `rbac_default_permissions`;
 CREATE TABLE IF NOT EXISTS `rbac_default_permissions` (
   `secId` int(10) unsigned NOT NULL COMMENT 'Security Level id',
   `permissionId` int(10) unsigned NOT NULL COMMENT 'permission id',
@@ -251,7 +237,6 @@ INSERT INTO `rbac_default_permissions` (`secId`, `permissionId`, `realmId`) VALU
 -- Table structure for table `rbac_linked_permissions`
 --
 
-DROP TABLE IF EXISTS `rbac_linked_permissions`;
 CREATE TABLE IF NOT EXISTS `rbac_linked_permissions` (
   `id` int(10) unsigned NOT NULL COMMENT 'Permission id',
   `linkedId` int(10) unsigned NOT NULL COMMENT 'Linked Permission id',
@@ -899,7 +884,6 @@ INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES
 -- Table structure for table `rbac_permissions`
 --
 
-DROP TABLE IF EXISTS `rbac_permissions`;
 CREATE TABLE IF NOT EXISTS `rbac_permissions` (
   `id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Permission id',
   `name` varchar(100) NOT NULL COMMENT 'Permission name',
@@ -1562,7 +1546,6 @@ INSERT INTO `rbac_permissions` (`id`, `name`) VALUES
 -- Table structure for table `realmcharacters`
 --
 
-DROP TABLE IF EXISTS `realmcharacters`;
 CREATE TABLE IF NOT EXISTS `realmcharacters` (
   `realmid` int(10) unsigned NOT NULL DEFAULT '0',
   `acctid` int(10) unsigned NOT NULL,
@@ -1584,7 +1567,6 @@ INSERT INTO `realmcharacters` (`realmid`, `acctid`, `numchars`) VALUES
 -- Table structure for table `realmlist`
 --
 
-DROP TABLE IF EXISTS `realmlist`;
 CREATE TABLE IF NOT EXISTS `realmlist` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL DEFAULT '',
@@ -1615,7 +1597,6 @@ INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `localSubnetMa
 -- Table structure for table `updates`
 --
 
-DROP TABLE IF EXISTS `updates`;
 CREATE TABLE IF NOT EXISTS `updates` (
   `name` varchar(200) NOT NULL COMMENT 'filename with extension of the update.',
   `hash` char(40) DEFAULT '' COMMENT 'sha1 hash of the sql file.',
@@ -1651,7 +1632,6 @@ INSERT INTO `updates` (`name`, `hash`, `state`, `timestamp`, `speed`) VALUES
 -- Table structure for table `updates_include`
 --
 
-DROP TABLE IF EXISTS `updates_include`;
 CREATE TABLE IF NOT EXISTS `updates_include` (
   `path` varchar(200) NOT NULL COMMENT 'directory to include. $ means relative to the source directory.',
   `state` enum('RELEASED','ARCHIVED') NOT NULL DEFAULT 'RELEASED' COMMENT 'defines if the directory contains released or archived updates.',
@@ -1673,7 +1653,6 @@ INSERT INTO `updates_include` (`path`, `state`) VALUES
 -- Table structure for table `uptime`
 --
 
-DROP TABLE IF EXISTS `uptime`;
 CREATE TABLE IF NOT EXISTS `uptime` (
   `realmid` int(10) unsigned NOT NULL,
   `starttime` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1688,11 +1667,7 @@ CREATE TABLE IF NOT EXISTS `uptime` (
 --
 
 INSERT INTO `uptime` (`realmid`, `starttime`, `uptime`, `maxplayers`, `revision`) VALUES
-(1, 1475377969, 0, 0, 'TrinityCore rev. bc8b2e785a3f+ 2016-10-01 18:55:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
-(1, 1475378207, 600, 1, 'TrinityCore rev. bc8b2e785a3f+ 2016-10-01 18:55:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
-(1, 1475440772, 0, 0, 'TrinityCore rev. 2bf6b80afedc 2016-10-02 14:56:58 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
-(1, 1475621938, 1803, 1, 'TrinityCore rev. fc5a23c0ee42 2016-10-04 23:27:02 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
-(1, 1475624325, 0, 0, 'TrinityCore rev. fc5a23c0ee42 2016-10-04 23:27:02 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
+(1, 1475941364, 0, 0, 'TrinityCore rev. 1ec4d3afdf34+ 2016-10-08 16:01:53 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
 
 --
 -- Constraints for dumped tables
