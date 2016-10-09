@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 --
 
 INSERT INTO `account` (`id`, `username`, `sha_pass_hash`, `sessionkey`, `v`, `s`, `token_key`, `email`, `reg_mail`, `joindate`, `last_ip`, `last_attempt_ip`, `failed_logins`, `locked`, `lock_country`, `last_login`, `online`, `expansion`, `mutetime`, `mutereason`, `muteby`, `locale`, `os`, `recruiter`) VALUES
-(1, 'ADMIN', '8301316D0D8448A34FA6D0C6BF1CBFA2B4A1A93A', '17C01829F9412F445970E58C087FF61051D6C43453AF04E520C347FA7FB14A545A56691305C7B8A4', '14C4F81FF7E0F6F588EA5434F1C8BD0F7ADD9D38D4328AF4ADB452A8833241A7', 'EA9F18D30FB0601FEE79336176F7C793D785436C46163A873E4C9907D76EDCF1', '', '', '', '2016-10-02 03:17:17', '127.0.0.1', '127.0.0.1', 0, 0, '00', '2016-10-04 23:41:09', 0, 2, 0, '', '', 0, 'Win', 0);
+(1, 'ADMIN', '8301316D0D8448A34FA6D0C6BF1CBFA2B4A1A93A', '41FABED149C2C80C6FAF60C04FDB22D27005762119A55F16228469BEACB9D4EBE3826D51CC16E559', '14C4F81FF7E0F6F588EA5434F1C8BD0F7ADD9D38D4328AF4ADB452A8833241A7', 'EA9F18D30FB0601FEE79336176F7C793D785436C46163A873E4C9907D76EDCF1', '', '', '', '2016-10-02 03:17:17', '127.0.0.1', '127.0.0.1', 0, 0, '00', '2016-10-08 23:08:23', 0, 2, 0, '', '', 0, 'Win', 0);
 
 -- --------------------------------------------------------
 
@@ -1667,7 +1667,11 @@ CREATE TABLE IF NOT EXISTS `uptime` (
 --
 
 INSERT INTO `uptime` (`realmid`, `starttime`, `uptime`, `maxplayers`, `revision`) VALUES
-(1, 1475941364, 0, 0, 'TrinityCore rev. 1ec4d3afdf34+ 2016-10-08 16:01:53 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
+(1, 1475941364, 0, 0, 'TrinityCore rev. 1ec4d3afdf34+ 2016-10-08 16:01:53 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
+(1, 1475964263, 0, 0, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
+(1, 1475964640, 600, 0, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
+(1, 1475965801, 1802, 1, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
+(1, 1475968100, 1200, 1, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
 
 --
 -- Constraints for dumped tables
