@@ -1671,7 +1671,9 @@ INSERT INTO `uptime` (`realmid`, `starttime`, `uptime`, `maxplayers`, `revision`
 (1, 1475964263, 0, 0, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
 (1, 1475964640, 600, 0, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
 (1, 1475965801, 1802, 1, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
-(1, 1475968100, 1200, 1, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
+(1, 1475968100, 1200, 1, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
+(1, 1476138338, 0, 0, 'TrinityCore rev. 819ebffe4845+ 2016-10-10 22:34:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
+(1, 1476139344, 0, 0, 'TrinityCore rev. 819ebffe4845+ 2016-10-10 22:34:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
 
 --
 -- Constraints for dumped tables
