@@ -231,7 +231,7 @@ public:
 	mod_npc_Professions_WorldScript() : WorldScript("mod_npcprofessi_WorldScript") { }
 
 	void OnConfigLoad(bool /*reload*/)	{
-		ChargeProfession       = sConfigMgr->GetBoolDefault("Enabre.Charge.Profession", true);
+		ChargeProfession       = sConfigMgr->GetBoolDefault("Enable.Charge.Profession", true);
 		ChargeProfessionHONOR  = sConfigMgr->GetIntDefault("Charge.Profession_Honor.or.Item", 0);
 		IdEmblem			   = sConfigMgr->GetIntDefault("Id_Item", 0);
 		pValue                 = sConfigMgr->GetIntDefault("Value_To_Charge", 0);
